@@ -1,15 +1,13 @@
 import { test, expect } from "@playwright/test";
 
 import {
-  username,
-  password,
-  loginAttempts,
+  user
 } from "./data/user";
 
 test("user test data should be valid", async () => {
-  expect(username).toBe("standard_user");
+  expect(user.username).toBe("standard_user");
 
-  expect(password).toBe("secret_sauce");
+expect(user.password).toBe("secret_sauce");
 
-  expect(loginAttempts).toBe(3);
+expect(user.loginAttempts).toBe(3);
 });

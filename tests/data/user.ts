@@ -1,5 +1,5 @@
-export const username: string = "standard_user";
-
-export const password: string = "secret_sauce";
-
-export const loginAttempts: number = 3;
+export const user = {
+    username: "standard_user",
+    password: "secret_sauce",
+    loginAttempts: 3,
+};

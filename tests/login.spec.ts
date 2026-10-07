@@ -1,10 +1,22 @@
 import { test } from "./fixture/test";
 import { expect } from "@playwright/test";
+import { user } from "./data/user";
 
-test("user should be able to log in successfully", async ({ authenticatedPage }) => {
-    await expect(authenticatedPage).toHaveURL(/inventory.html/);
+test.use({
+    storageState: undefined,
+});
+
+test("user should be able to log in successfully", async ({ page, loginPage }) => {
+    await page.goto("/");
+
+    await loginPage.login(
+        user.username,
+        user.password
+    );
+
+    await expect(page).toHaveURL(/inventory.html/);
 
     await expect(
-        authenticatedPage.locator(".title")
+        page.locator(".title")
     ).toHaveText("Products");
 });

@@ -12,13 +12,13 @@ export const test = base.extend<{
         await use(loginPage);
     },
 
-    authenticatedPage: async ({ loginPage, page }, use) => {
+    authenticatedPage: async ({  page }, use) => {
         await page.goto("/");
 
-        await loginPage.login(
-            user.username,
-            user.password
-        );
+        //await loginPage.login(
+        //   user.username,
+        //  user.password
+        //);
 
         await use(page);
     },
